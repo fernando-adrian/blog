@@ -1,0 +1,18 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title> {{ post?.title }} </mat-card-title>
+    <mat-card-subtitle> {{ post?.subtitle }} </mat-card-subtitle>
+  </mat-card-header>
+  <img
+    mat-card-image
+    [src]="post?.imageUrl"
+  />
+  <mat-card-content>
+    <p>
+      {{ post?.content }}
+    </p>
+  </mat-card-content>
+  <mat-card-actions *ngFor="let actions of post?.actions">
+    <button mat-button> {{ actions.name }} </button>
+  </mat-card-actions>
+</mat-card>
