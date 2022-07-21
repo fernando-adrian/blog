@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ActionsEnum } from '../enum/actions.enum';
+import { Actions } from '../models/actions.model';
 import { Post } from '../models/post.model';
 
 @Component({
@@ -14,4 +16,12 @@ export class PostComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  renderButton(action: Actions){
+    if (action.name === ActionsEnum.LIKE)
+    {
+      return 'like';
+    }
+
+    return 'else'
+  }
 }

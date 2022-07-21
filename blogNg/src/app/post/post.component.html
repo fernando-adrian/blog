@@ -12,7 +12,11 @@
       {{ post?.content }}
     </p>
   </mat-card-content>
-  <mat-card-actions *ngFor="let actions of post?.actions">
-    <button mat-button> {{ actions.name }} </button>
+  <mat-card-actions align="end">
+    <button mat-button *ngFor="let action of post?.actions">
+      <mat-icon *ngIf="action.name === 'Like'">favorite</mat-icon>
+      <mat-icon *ngIf="action.name === 'Share'">sync</mat-icon>
+      <span *ngIf="action.name === 'Read more'"> {{ action.name }}</span>
+    </button>
   </mat-card-actions>
 </mat-card>

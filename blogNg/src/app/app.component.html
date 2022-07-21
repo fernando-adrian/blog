@@ -1,7 +1,6 @@
 <mat-toolbar color="primary">
-  <button mat-icon-button>
-    <mat-icon>menu</mat-icon>
-  </button>
-  <span>My blog</span>
+  <button mat-button [routerLink]="['/news']">News</button>
+  <button mat-button [routerLink]="['/reviews']">Reviews</button>
+  <button mat-button [routerLink]="['/indie']">Indie</button>
 </mat-toolbar>
-<app-post-list></app-post-list>
+<router-outlet></router-outlet>

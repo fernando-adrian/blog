@@ -13,9 +13,13 @@ import { MatCardModule } from '@angular/material/card';
 import { PostComponent } from './post/post.component';
 import { PostListComponent } from './post-list/post-list.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ContactoComponent } from './contacto/contacto.component';
+import { NewsComponent } from './news/news.component';
+import { ReviewsComponent } from './reviews/reviews.component';
+import { IndieComponent } from './indie/indie.component';
 
 @NgModule({
-  declarations: [AppComponent, PostComponent, PostListComponent],
+  declarations: [AppComponent, PostComponent, PostListComponent, ContactoComponent, NewsComponent, ReviewsComponent, IndieComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
