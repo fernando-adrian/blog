@@ -1,1 +1,30 @@
-<p>contacto works!</p>
+<mat-card class="card-contacto" align="center">
+  <mat-label class="label-contacto">Contacto</mat-label>
+  <form (submit)="sendContact($event)" class="form-contacto">
+    <mat-form-field class="field-contacto" appearance="outline">
+      <mat-label>Nombre</mat-label>
+      <input matInput placeholder="Nombre" />
+    </mat-form-field>
+
+    <mat-form-field class="field-contacto" appearance="outline">
+      <mat-label>Email</mat-label>
+      <input matInput placeholder="Email" />
+    </mat-form-field>
+
+    <mat-form-field class="field-contacto" appearance="outline">
+      <mat-label>Subject</mat-label>
+      <input matInput placeholder="Subject" />
+    </mat-form-field>
+
+    <mat-form-field class="field-contacto" appearance="outline">
+      <mat-label>Message</mat-label>
+      <textarea
+        class="textarea-contacto"
+        matInput
+        placeholder="Message"
+      ></textarea>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" class="button-contacto">Send</button>
+  </form>
+</mat-card>

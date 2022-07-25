@@ -1,0 +1,20 @@
+.form-contacto {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-contacto {
+  margin: 20px;
+}
+
+.textarea-contacto {
+  height: 150px;
+}
+
+.field-contacto {
+  min-width: 300px;
+}
+
+.button-contacto {
+  width: 100px;
+}

@@ -9,6 +9,9 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 import { PostComponent } from './post/post.component';
 import { PostListComponent } from './post-list/post-list.component';
@@ -19,7 +22,15 @@ import { ReviewsComponent } from './reviews/reviews.component';
 import { IndieComponent } from './indie/indie.component';
 
 @NgModule({
-  declarations: [AppComponent, PostComponent, PostListComponent, ContactoComponent, NewsComponent, ReviewsComponent, IndieComponent],
+  declarations: [
+    AppComponent,
+    PostComponent,
+    PostListComponent,
+    ContactoComponent,
+    NewsComponent,
+    ReviewsComponent,
+    IndieComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -29,6 +40,9 @@ import { IndieComponent } from './indie/indie.component';
     MatButtonModule,
     MatIconModule,
     MatCardModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSnackBarModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
