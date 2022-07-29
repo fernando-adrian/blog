@@ -2,3 +2,7 @@
 mat-card {
   margin: 20px 20px 0px 20px;
 }
+
+mat-card-subtitle {
+  font-style: italic;
+}

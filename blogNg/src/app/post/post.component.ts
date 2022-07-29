@@ -16,12 +16,4 @@ export class PostComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  renderButton(action: Actions){
-    if (action.name === ActionsEnum.LIKE)
-    {
-      return 'like';
-    }
-
-    return 'else'
-  }
 }

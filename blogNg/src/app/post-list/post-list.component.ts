@@ -1,4 +1,4 @@
-import { AfterContentInit, Component, DoCheck, OnInit } from '@angular/core';
+import { AfterContentInit, Component, DoCheck, Input, OnInit } from '@angular/core';
 import { Post } from '../models/post.model';
 import { PostService } from '../services/post.service';
 
@@ -8,11 +8,13 @@ import { PostService } from '../services/post.service';
   styleUrls: ['./post-list.component.css'],
 })
 export class PostListComponent implements OnInit {
+  @Input() filter?: string = '';
+
   posts: Post[] = [];
   constructor(private postService: PostService) {}
 
   ngOnInit(): void {
-    this.postService.getAllPosts();
+    this.postService.getAllPosts(this.filter?.toLocaleLowerCase());
     this.postService.getUpdatedPostListener().subscribe((posts) => {
       this.posts = posts;
     });
