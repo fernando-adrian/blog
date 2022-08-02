@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { FormControl, NgForm } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Post } from '../models/post.model';
 import { PostService } from '../services/post.service';
@@ -12,12 +12,9 @@ import { PostService } from '../services/post.service';
 export class CreatePostComponent {
   post?: Post;
   createDate: Date;
-  postCollection: string[] = [
-    'NEWS',
-    'REVIEWS',
-    'INDIE',
-    'OTHER'
-  ];
+  imageUrl?: string;
+  imageFile?: File;
+  postCollection: string[] = ['NEWS', 'REVIEWS', 'INDIE', 'OTHER'];
 
   constructor(
     private postService: PostService,
@@ -37,12 +34,21 @@ export class CreatePostComponent {
         formValue.content,
         formValue.contentPreview,
         new Date(),
+        this.imageFile,
       )
       .subscribe((postCreated) => {
         console.log(postCreated.message);
         this._snackBar.open(postCreated.message, 'Close', {
-          duration: 3000
+          duration: 3000,
         });
       });
+  }
+
+  upload(e: HTMLInputElement) {
+    // console.log(e.files?[0].name);
+    if (e.files?.length) {
+      this.imageUrl = e.files[0].name;
+      this.imageFile = e.files[0];
+    }
   }
 }

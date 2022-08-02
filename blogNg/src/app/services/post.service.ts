@@ -1,9 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { map, Observable, pipe, Subject, Subscription } from 'rxjs';
+import { map, Observable, Subject } from 'rxjs';
 import { Post } from '../models/post.model';
-import { Actions } from '../models/actions.model';
-import { ActionsEnum } from '../enum/actions.enum';
 
 @Injectable({
   providedIn: 'root',
@@ -53,16 +51,18 @@ export class PostService {
     author: string,
     content: string,
     contentPreview: string,
-    createDate: Date
+    createDate: Date,
+    imageFile?: File,
   ): Observable<any> {
     console.log('add post');
-    return this.http.post(this.BASE_URL + '/api/posts', {
-      title,
-      postCollection,
-      content,
-      contentPreview,
-      author,
-      createDate,
-    });
+    const formData = new FormData();
+    formData.append('title', title);
+    formData.append('postCollection', postCollection);
+    formData.append('content', content);
+    formData.append('contentPreview', contentPreview);
+    formData.append('author', author);
+    formData.append('createDate', createDate.toString());
+    formData.append('imageFile', imageFile?imageFile:'', title);
+    return this.http.post(this.BASE_URL + '/api/posts', formData);
   }
 }
