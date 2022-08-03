@@ -3,6 +3,16 @@
   flex-direction: column;
 }
 
+mat-card {
+  max-width: 400px;
+  width: 100%;
+}
+
+.card-container{
+  display: flex;
+  justify-content: center;
+}
+
 .card-post-create {
   margin: 20px;
 }

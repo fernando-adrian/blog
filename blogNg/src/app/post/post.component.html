@@ -5,11 +5,12 @@
       Por: {{ post?.author }} - {{ post?.createDate | date: "MMM/dd/YY, hh:mm a" }}
     </mat-card-subtitle>
   </mat-card-header>
-  <img mat-card-image src="../../assets/img/bg/bg-texture.png" />
+  <img mat-card-image [src]="post?.imageUrl" />
   <mat-card-content>
     <p>
       {{ post?.contentPreview }}
     </p>
+
   </mat-card-content>
   <mat-card-actions align="end">
     <button mat-button *ngFor="let action of post?.actions">

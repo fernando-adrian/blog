@@ -1,93 +1,97 @@
-<mat-card class="card-post-create" align="center">
-  <mat-card-header>
-    <mat-card-title>Create a post</mat-card-title>
-  </mat-card-header>
+<div class="card-container">
+  <mat-card class="card-post-create" align="center">
+    <mat-card-header>
+      <mat-card-title>Create a post</mat-card-title>
+    </mat-card-header>
 
-  <mat-card-content>
-    <form class="form-post-create" #formPost="ngForm">
-      <mat-form-field class="field-post-create" appearance="outline">
-        <mat-label>Creation Date</mat-label>
+    <mat-card-content>
+      <form class="form-post-create" #formPost="ngForm">
+        <mat-form-field class="field-post-create" appearance="outline">
+          <mat-label>Creation Date</mat-label>
+          <input
+            name="creationDate"
+            matInput
+            [value]="createDate | date: 'MMM dd, YYYY, h:mm a'"
+            disabled="true"
+          />
+        </mat-form-field>
+
+        <mat-form-field class="field-post-create" appearance="outline">
+          <mat-label>Title</mat-label>
+          <input name="title" matInput placeholder="Title" ngModel required />
+        </mat-form-field>
+
+        <mat-form-field class="field-post-create" appearance="outline">
+          <mat-label>Author</mat-label>
+          <input name="author" matInput placeholder="Author" ngModel />
+        </mat-form-field>
+
+        <mat-form-field class="field-post-create" appearance="outline">
+          <mat-label>Image Url</mat-label>
+          <input
+            name="imageUrl"
+            matInput
+            (click)="imageFile.click()"
+            placeholder="image Url"
+            [ngModel]="imageUrl"
+            ng-readonly="true"
+            readonly="true"
+          />
+          <mat-icon matSuffix>image</mat-icon>
+        </mat-form-field>
+
         <input
-          name="creationDate"
-          matInput
-          [value]="createDate | date: 'MMM dd, YYYY, h:mm a'"
-          disabled="true"
+          #imageFile
+          (change)="upload(imageFile)"
+          type="file"
+          accept="image/png, image/gif, image/jpeg"
+          style="display: none"
         />
-      </mat-form-field>
 
-      <mat-form-field class="field-post-create" appearance="outline">
-        <mat-label>Title</mat-label>
-        <input name="title" matInput placeholder="Title" ngModel required />
-      </mat-form-field>
+        <mat-form-field class="field-post-create" appearance="outline">
+          <mat-label>Collection</mat-label>
+          <mat-select name="postCollection" ngModel required>
+            <mat-option *ngFor="let type of postCollection" [value]="type">
+              {{ type | titlecase }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
 
-      <mat-form-field class="field-post-create" appearance="outline">
-        <mat-label>Author</mat-label>
-        <input name="author" matInput placeholder="Author" ngModel />
-      </mat-form-field>
+        <mat-form-field class="field-post-create" appearance="outline">
+          <mat-label>Content</mat-label>
+          <textarea
+            class="textarea-post-create"
+            name="content"
+            matInput
+            placeholder="Content"
+            ngModel
+          ></textarea>
+        </mat-form-field>
 
-      <mat-form-field class="field-post-create" appearance="outline">
-        <mat-label>Image Url</mat-label>
-        <input
-          name="imageUrl"
-          matInput
-          (click)="imageFile.click()"
-          placeholder="image Url"
-          [ngModel]="imageUrl"
-          ng-readonly="true"
-          readonly="true"
-        />
-        <mat-icon matSuffix>image</mat-icon>
-      </mat-form-field>
+        <mat-form-field class="field-post-create" appearance="outline">
+          <mat-label>Content Preview</mat-label>
+          <textarea
+            class="textarea-post-create"
+            name="contentPreview"
+            matInput
+            placeholder="Content Preview"
+            ngModel
+          ></textarea>
+        </mat-form-field>
 
-      <input
-        #imageFile
-        (change)="upload(imageFile)"
-        type="file"
-        style="display: none"
-      />
+        <pre> {{ formPost.value | json }}</pre>
+        <button
+          mat-raised-button
+          type="submit"
+          (click)="onPublish(formPost.value)"
+          color="primary"
+          class="button-post-create"
+          [disabled]="formPost.invalid"
+        >
+          Publish
+        </button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>
 
-      <mat-form-field class="field-post-create" appearance="outline">
-        <mat-label>Collection</mat-label>
-        <mat-select name="postCollection" ngModel required>
-          <mat-option *ngFor="let type of postCollection" [value]="type">
-            {{ type | titlecase }}
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
-
-      <mat-form-field class="field-post-create" appearance="outline">
-        <mat-label>Content</mat-label>
-        <textarea
-          class="textarea-post-create"
-          name="content"
-          matInput
-          placeholder="Content"
-          ngModel
-        ></textarea>
-      </mat-form-field>
-
-      <mat-form-field class="field-post-create" appearance="outline">
-        <mat-label>Content Preview</mat-label>
-        <textarea
-          class="textarea-post-create"
-          name="contentPreview"
-          matInput
-          placeholder="Content Preview"
-          ngModel
-        ></textarea>
-      </mat-form-field>
-
-      <pre> {{ formPost.value | json }}</pre>
-      <button
-        mat-raised-button
-        type="submit"
-        (click)="onPublish(formPost.value)"
-        color="primary"
-        class="button-post-create"
-        [disabled]="formPost.invalid"
-      >
-        Publish
-      </button>
-    </form>
-  </mat-card-content>
-</mat-card>

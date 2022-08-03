@@ -8,5 +8,6 @@ export interface Post{
   author: string;
   createDate: Date;
   totalLikes: number;
+  imageUrl: string;
   actions?: Actions[];
 }

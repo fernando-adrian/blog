@@ -35,6 +35,7 @@ export class PostService {
                 author: post.author,
                 createDate: post.createDate,
                 totalLikes: post.totalLikes,
+                imageUrl: post.imageUrl
               };
             }),
           };
