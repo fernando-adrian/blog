@@ -1,0 +1,33 @@
+section{
+  margin-top: 20px;
+  /* font-family: 'Roboto'; */
+}
+
+.title{
+  font-family: 'Roboto';
+  font-size: 2rem;
+  font-style: italic;
+}
+
+.author-createDate{
+  display: flex;
+}
+
+.author, .createDate{
+  color: darkslategrey;
+  font-family: 'Roboto';
+  font-size: .75rem;
+}
+
+.image{
+  height: auto;
+  width: 100%;
+}
+
+.content {
+  font-family: 'Roboto';
+  font-size: 1rem;
+  margin-top: 40px;
+  width: 100%;
+  white-space: pre-wrap;
+}

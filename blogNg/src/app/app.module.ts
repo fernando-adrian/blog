@@ -24,6 +24,8 @@ import { IndieComponent } from './indie/indie.component';
 import { CreatePostComponent } from './create-post/create-post.component';
 import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
+import { PostViewComponent } from './post-view/post-view.component';
+import { FormatCreateDatePipe } from './format-create-date.pipe';
 
 @NgModule({
   declarations: [
@@ -36,6 +38,8 @@ import { HomeComponent } from './home/home.component';
     IndieComponent,
     CreatePostComponent,
     HomeComponent,
+    PostViewComponent,
+    FormatCreateDatePipe,
   ],
   imports: [
     BrowserModule,

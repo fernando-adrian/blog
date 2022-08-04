@@ -1,0 +1,15 @@
+<section>
+  <article>
+    <header>
+      <h2 class="title"> {{ post.title }}</h2>
+      <div class="author-createDate">
+        <h4 class="author"> Por {{ post.author }} | </h4>
+        <h4 class="createDate">&nbsp;{{ post.createDate | formatCreateDate }}</h4>
+      </div>
+    </header>
+    <div>
+      <img class="image" [src]="post.imageUrl" [alt]="post.title">
+    </div>
+    <pre class="content">{{ post.content }}</pre>
+  </article>
+</section>

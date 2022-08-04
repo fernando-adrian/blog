@@ -15,7 +15,7 @@ export class PostListComponent implements OnInit {
 
   ngOnInit(): void {
     this.postService.getAllPosts(this.filter?.toLocaleLowerCase());
-    this.postService.getUpdatedPostListener().subscribe((posts) => {
+    this.postService.getUpdatedPostsListener().subscribe((posts) => {
       this.posts = posts;
     });
   }

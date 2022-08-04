@@ -5,7 +5,7 @@ import { CreatePostComponent } from './create-post/create-post.component';
 import { HomeComponent } from './home/home.component';
 import { IndieComponent } from './indie/indie.component';
 import { NewsComponent } from './news/news.component';
-import { PostListComponent } from './post-list/post-list.component';
+import { PostViewComponent } from './post-view/post-view.component';
 import { ReviewsComponent } from './reviews/reviews.component';
 
 const routes: Routes = [
@@ -14,6 +14,7 @@ const routes: Routes = [
   { path: 'indie', component: IndieComponent },
   { path: 'contact', component: ContactoComponent },
   { path: 'createPost', component: CreatePostComponent },
+  { path: ':id', component: PostViewComponent},
   { path: '', component: HomeComponent },
 ];
 

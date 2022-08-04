@@ -1,5 +1,3 @@
-import { Actions } from "./actions.model";
-
 export interface Post{
   id: string;
   title: string;
@@ -9,5 +7,5 @@ export interface Post{
   createDate: Date;
   totalLikes: number;
   imageUrl: string;
-  actions?: Actions[];
+  postUrl: string;
 }

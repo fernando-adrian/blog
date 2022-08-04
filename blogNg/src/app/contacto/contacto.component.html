@@ -1,10 +1,12 @@
 <div class="card-container">
       <mat-card class="card-contacto" align="center">
-        <mat-label class="label-contacto">Contacto</mat-label>
+        <mat-card-header>
+          <mat-card-title>Contact</mat-card-title>
+        </mat-card-header>
         <form (submit)="sendContact($event)" class="form-contacto">
           <mat-form-field class="field-contacto" appearance="outline">
-            <mat-label>Nombre</mat-label>
-            <input matInput placeholder="Nombre" />
+            <mat-label>Name</mat-label>
+            <input matInput placeholder="Name" />
           </mat-form-field>
 
           <mat-form-field class="field-contacto" appearance="outline">
