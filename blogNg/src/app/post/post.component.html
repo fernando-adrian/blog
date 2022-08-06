@@ -5,7 +5,7 @@
       Por: {{ post?.author }} - {{ post?.createDate | formatCreateDate }}
     </mat-card-subtitle>
   </mat-card-header>
-  <img mat-card-image [src]="post?.imageUrl" />
+  <img *ngIf="post" mat-card-image [src]="post?.imageUrl" />
   <mat-card-content>
     <p>
       {{ post?.contentPreview }}

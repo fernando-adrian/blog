@@ -1,20 +1,16 @@
-mat-card {
-  max-width: 400px;
-  width: 100%;
-}
 
 .card-container{
+  width: 100%;
   display: flex;
   justify-content: center;
 }
 
-.form-contacto {
-  display: flex;
-  flex-direction: column;
+mat-card {
+  width: 100%;
 }
 
 .card-contacto {
-  margin: 20px;
+  margin-top: 20px;
 }
 
 .textarea-contacto {
@@ -22,7 +18,7 @@ mat-card {
 }
 
 .field-contacto {
-  min-width: 300px;
+  min-width: 100%;
 }
 
 .button-contacto {

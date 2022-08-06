@@ -10,8 +10,8 @@ import { ReviewsComponent } from './reviews/reviews.component';
 
 const routes: Routes = [
   { path: 'news', component: NewsComponent },
-  { path: 'reviews', component: ReviewsComponent },
-  { path: 'indie', component: IndieComponent },
+  { path: 'reviews', component: NewsComponent },
+  { path: 'indie', component: NewsComponent },
   { path: 'contact', component: ContactoComponent },
   { path: 'createPost', component: CreatePostComponent },
   { path: ':id', component: PostViewComponent},

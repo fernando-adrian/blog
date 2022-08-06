@@ -1,20 +1,14 @@
-mat-card {
-  max-width: 400px;
+
+.card-container{
   width: 100%;
 }
 
-.card-container{
-  display: flex;
-  justify-content: center;
-}
-
-.form-post-create {
-  display: flex;
-  flex-direction: column;
+mat-card {
+  width: 100%;
 }
 
 .card-post-create {
-  margin: 20px;
+  margin-top: 20px;
 }
 
 .textarea-post-create {
@@ -22,9 +16,15 @@ mat-card {
 }
 
 .field-post-create {
-  min-width: 300px;
+  width: 80%;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 .button-post-create {
-  width: 100px;
+  width: 150px;
+}
+
+mat-card-actions{
+  margin-right: 10px;
 }

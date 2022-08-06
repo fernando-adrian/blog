@@ -4,8 +4,8 @@
       <mat-card-title>Create a post</mat-card-title>
     </mat-card-header>
 
-    <mat-card-content>
-      <form class="form-post-create" #formPost="ngForm">
+    <form #formPost="ngForm">
+      <mat-card-content>
         <mat-form-field class="field-post-create" appearance="outline">
           <mat-label>Creation Date</mat-label>
           <input
@@ -26,12 +26,15 @@
           <input name="author" matInput placeholder="Author" ngModel />
         </mat-form-field>
 
-        <mat-form-field class="field-post-create" appearance="outline">
+        <mat-form-field
+          (click)="imageFile.click()"
+          class="field-post-create"
+          appearance="outline"
+        >
           <mat-label>Image Url</mat-label>
           <input
             name="imageUrl"
             matInput
-            (click)="imageFile.click()"
             placeholder="image Url"
             [ngModel]="imageUrl"
             ng-readonly="true"
@@ -80,6 +83,8 @@
         </mat-form-field>
 
         <!-- <pre> {{ formPost.value | json }}</pre> -->
+      </mat-card-content>
+      <mat-card-actions align="end">
         <button
           mat-raised-button
           type="submit"
@@ -90,8 +95,7 @@
         >
           Publish
         </button>
-      </form>
-    </mat-card-content>
+      </mat-card-actions>
+    </form>
   </mat-card>
 </div>
-
